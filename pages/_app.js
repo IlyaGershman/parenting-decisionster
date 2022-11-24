@@ -1,7 +1,7 @@
-import '../css/style.css'
-import '../css/form.css'
-import Head from 'next/head'
-import Link from 'next/link'
+import "../css/style.css";
+import "../css/form.css";
+import Head from "next/head";
+import Link from "next/link";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,7 +13,10 @@ function MyApp({ Component, pageProps }) {
       <div className="top-bar">
         <div className="nav">
           <Link href="/">Home</Link>
-          <Link href="/new">Add Pet</Link>
+          <Link href="/pets/new">Add Pet</Link>
+          <Link href="/activities/new">Add Activity</Link>
+          <Link href="/pets">View Pets</Link>
+          <Link href="/activities">View Activities</Link>
         </div>
 
         <img
@@ -26,7 +29,7 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </div>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

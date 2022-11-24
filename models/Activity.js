@@ -17,6 +17,10 @@ const ActivitySchema = new mongoose.Schema({
     enum: ["YES", "NO", "5_MIN"],
     default: "YES",
   },
+  image_url: {
+    required: [true, "Please provide an image url for this activity."],
+    type: String,
+  },
 });
 
 export default mongoose.models.Activity ||

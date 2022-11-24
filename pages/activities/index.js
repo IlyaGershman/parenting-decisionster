@@ -2,7 +2,7 @@ import Link from "next/link";
 import dbConnect from "/lib/dbConnect";
 import Activity from "../../models/Activity";
 
-const PetsPage = ({ activities }) => (
+const ActivitiesPage = ({ activities }) => (
   <>
     {/* Create a card for each pet */}
     {activities.map((activity) => (
@@ -16,15 +16,15 @@ const PetsPage = ({ activities }) => (
 
             <div className="btn-container">
               <Link
-                href="/pets/[id]/edit"
-                as={`/pets/${activity._id}/edit`}
+                href="/activities/[id]/edit"
+                as={`/activities/${activity._id}/edit`}
                 legacyBehavior
               >
                 <button className="btn edit">Edit</button>
               </Link>
               <Link
-                href="/pets/[id]"
-                as={`/pets/${activity._id}`}
+                href="/activities/[id]"
+                as={`/activities/${activity._id}`}
                 legacyBehavior
               >
                 <button className="btn view">View</button>
@@ -49,9 +49,7 @@ export async function getServerSideProps() {
     return activity;
   });
 
-  console.log(JSON.stringify(activities, null, 2));
-
   return { props: { activities: activities } };
 }
 
-export default PetsPage;
+export default ActivitiesPage;
